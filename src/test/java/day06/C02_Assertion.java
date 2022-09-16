@@ -58,7 +58,7 @@ public class C02_Assertion {
         //- title'in "facebook" icermedigini test et
         String expectedTitle = "facebook";
         String actualTitle = driver.getTitle();
-        Assert.assertFalse(actualTitle.contains(expectedTitle));
+        Assert.assertFalse("Title facebook icermiyor",actualTitle.contains(expectedTitle));
 
     }
 
@@ -66,8 +66,16 @@ public class C02_Assertion {
     public void test3(){
         //- sol ust kosede amazon logosunun gorundugunu test et
         WebElement logo = driver.findElement(By.id("nav-logo-sprites"));
-        Assert.assertTrue(logo.isDisplayed());
+        Assert.assertTrue("Kösede amazon logosu var",logo.isDisplayed());
 
+    }
+
+    @Test
+    public void test4(){
+        //URL nin www.facebook.com oldugunu test edin
+        String exceptedUrl = "http://www.facebook.com";
+        String actualUrl = driver.getCurrentUrl();
+        Assert.assertEquals("URL www.facebook.com degil", exceptedUrl, actualUrl);
     }
 
 

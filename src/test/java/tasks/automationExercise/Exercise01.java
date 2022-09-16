@@ -58,11 +58,14 @@ public class Exercise01 {
         //6. Enter name and email address
         WebElement nameBox = driver.findElement(By.xpath("//*[@data-qa='signup-name']"));
         WebElement emailBox = driver.findElement(By.xpath("//*[@data-qa='signup-email']"));
+        Thread.sleep(250);
         nameBox.sendKeys("Burak");
+        Thread.sleep(250);
         emailBox.sendKeys("enesyildizz90@gmail.com");
 
         //7. Click 'Signup' button
         WebElement signUpButton = driver.findElement(By.xpath("//*[@data-qa='signup-button']"));
+        Thread.sleep(250);
         signUpButton.click();
 
         //8. Verify that 'ENTER ACCOUNT INFORMATION' is visible
@@ -81,27 +84,59 @@ public class Exercise01 {
         WebElement monthBox = driver.findElement(By.xpath("//*[@id='months']"));
         WebElement yearBox = driver.findElement(By.xpath("//*[@id='years']"));
 
-        Thread.sleep(1000);
+        Thread.sleep(250);
         titleMr.click();
-        Thread.sleep(1000);
+        Thread.sleep(250);
         passwordSignUpPage.sendKeys("12345");
-        Thread.sleep(1000);
-        dayBox.click();
+        Thread.sleep(250);
         dayBox.sendKeys("17");
-        Thread.sleep(1000);
-        monthBox.click();
+        Thread.sleep(250);
         monthBox.sendKeys("April");
-        Thread.sleep(1000);
+        Thread.sleep(250);
         yearBox.sendKeys("1995");
 
         //10. Select checkbox 'Sign up for our newsletter!'
+        Thread.sleep(250);
+        driver.findElement(By.name("newsletter")).click();
+
         //11. Select checkbox 'Receive special offers from our partners!'
+        Thread.sleep(250);
+        driver.findElement(By.xpath("//*[@id='optin']")).click();
+
         //12. Fill details: First name, Last name, Company, Address, Address2, Country, State, City, Zipcode, Mobile Number
+        Thread.sleep(250);
+        driver.findElement(By.xpath("//*[@id='first_name']")).sendKeys("Burak");
+        Thread.sleep(250);
+        driver.findElement(By.xpath("//*[@id='last_name']")).sendKeys("ÖZ");
+        Thread.sleep(250);
+        driver.findElement(By.xpath("//*[@id='company']")).sendKeys("TechPro");
+        Thread.sleep(250);
+        driver.findElement(By.xpath("//*[@id='address1']")).sendKeys("Yıldız Mah. Güneş Sok.");
+        Thread.sleep(250);
+        driver.findElement(By.xpath("//*[@id='address2']")).sendKeys("TechPro A.Ş.");
+        Thread.sleep(250);
+        driver.findElement(By.xpath("//*[@id='country']")).sendKeys("n");
+        Thread.sleep(250);
+        driver.findElement(By.xpath("//*[@id='state']")).sendKeys("Trakya");
+        Thread.sleep(250);
+        driver.findElement(By.xpath("//*[@id='city']")).sendKeys("Kırklareli");
+        Thread.sleep(250);
+        driver.findElement(By.xpath("//*[@id='zipcode']")).sendKeys("39100");
+        Thread.sleep(250);
+        driver.findElement(By.xpath("//*[@id='mobile_number']")).sendKeys("5554443322");
+
         //13. Click 'Create Account button'
+        Thread.sleep(250);
+        driver.findElement(By.xpath("//*[@data-qa='create-account']")).click();
+
         //14. Verify that 'ACCOUNT CREATED!' is visible
+
         //15. Click 'Continue' button
+
         //16. Verify that 'Logged in as username' is visible
+
         //17. Click 'Delete Account' button
+
         //18. Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button
 
     }

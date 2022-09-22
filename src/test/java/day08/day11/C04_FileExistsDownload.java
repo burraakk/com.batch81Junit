@@ -1,14 +1,13 @@
-package day11;
+package day08.day11;
 
 import org.junit.Assert;
 import org.junit.Test;
 import utilities.TestBaseBeforeClassAfterClass;
 
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class C04_FileExists extends TestBaseBeforeClassAfterClass {
+public class C04_FileExistsDownload extends TestBaseBeforeClassAfterClass {
     @Test
     public void test1() {
         /*

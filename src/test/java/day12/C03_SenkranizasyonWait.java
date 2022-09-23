@@ -51,10 +51,16 @@ public class C03_SenkranizasyonWait extends TestBaseBeforeClassAfterClass {
 
         //“It’s gone!” mesajinin goruntulendigini dogrulayin.
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        WebElement itsGoneWE = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='message']")));
+        WebElement itsGoneWE = wait.until(ExpectedConditions.
+                visibilityOfElementLocated(By.xpath("//*[@id='message']")));
+        Assert.assertTrue(itsGoneWE.isDisplayed());
 
         //Add buttonuna basin
+        driver.findElement(By.xpath("//*[text()='Add']")).click();
 
         //It’s back mesajinin gorundugunu test edin
+        WebElement itsBackWE = wait.until(ExpectedConditions.
+                visibilityOfElementLocated(By.xpath("//*[@id='message']")));
+        Assert.assertTrue(itsBackWE.isDisplayed());
     }
 }

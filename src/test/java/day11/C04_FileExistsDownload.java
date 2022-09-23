@@ -1,4 +1,4 @@
-package day08.day11;
+package day11;
 
 import org.junit.Assert;
 import org.junit.Test;

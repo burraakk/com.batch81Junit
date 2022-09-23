@@ -1,4 +1,4 @@
-package day08.day11;
+package day11;
 
 import com.github.javafaker.Faker;
 import org.junit.Test;

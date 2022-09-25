@@ -1,7 +1,11 @@
 package tasks;
 
 import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import utilities.TestBaseBeforeClassAfterClass;
+
+import java.util.List;
 
 public class C06_WebTables extends TestBaseBeforeClassAfterClass {
     @Test

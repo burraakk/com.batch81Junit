@@ -32,13 +32,33 @@ public class C08_WebTables extends TestBaseBeforeClassAfterClass {
 
     private void printColumns() {
         //table body’sinde bulunan toplam sutun(column) sayısını bulun.
+        List<WebElement> columnList = driver.findElements(By.xpath("//thead//tr//th"));
+        int columnSize = columnList.size();
+        System.out.println("\ncolumnSize = " + columnSize);
+
         //Table body’sinde bulunan sutunlari(column) konsolda yazdırın.
+        WebElement columns = driver.findElement(By.xpath("//thead//tr"));
+        System.out.println("\nHeaders\n" + columns.getText());
+
         //5.column daki elementleri konsolda yazdırın.
+        List<WebElement> column5 = driver.findElements(By.xpath("//tbody//td[5]"));
+        System.out.println("\n-----COLUM-5-----");
+        column5.forEach(t-> System.out.println(t.getText()));
+
     }
 
     private void printCells() {
         //table//td body’sinde bulunan toplam hücre(cell) sayısını bulun.
+        List<WebElement> cellList = driver.findElements(By.xpath("//tbody//td"));
+        int cellCount = cellList.size();
+        System.out.println("\ncellCount = " + cellCount + "\n");
+
         //Table body’sinde bulunan hücreleri(cells) konsolda yazdırın.
+        List<String> allCells = List.of(driver.findElement(By.xpath("//tbody")).getText());
+        System.out.println("--------TUM HUCRELER--------");
+        allCells.forEach(t-> System.out.print(t+" "));
+        System.out.println("\n");
+
     }
 
     private void printRows() {
@@ -47,11 +67,11 @@ public class C08_WebTables extends TestBaseBeforeClassAfterClass {
         int rowSize = rowList.size();
 
         //Table body’sinde bulunan satirlari(rows) konsolda yazdırın.
-        System.out.println("\nAll Rows\n");
+        System.out.println("\nAll Rows");
         rowList.forEach(t-> System.out.println(t.getText()));
 
         //4.satirdaki(row) elementleri konsolda yazdırın.
-        System.out.println("\nRow 4\n");
+        System.out.println("\nRow 4");
         WebElement row4 = driver.findElement(By.xpath("//tbody//tr[4]"));
         System.out.println(row4.getText());
     }
@@ -67,7 +87,7 @@ public class C08_WebTables extends TestBaseBeforeClassAfterClass {
         WebElement headers = driver.findElement(By.xpath("//thead//tr"));
         System.out.println("\nBasliklar\n" + headers.getText());
         WebElement body = driver.findElement(By.xpath("//tbody"));
-        System.out.println("\nTum Body\n" + body.getText());
+        System.out.println("\n-----Tum Body-----\n" + body.getText());
     }
 
     private void login() {

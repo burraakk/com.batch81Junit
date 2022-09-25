@@ -59,8 +59,7 @@ public class C01_Cookie extends TestBaseBeforeClassAfterClass {
             System.out.println(sayac + ". value : " + w.getValue());
             sayac++;
         }
-        //Assert.assertFalse(tumCookie.contains("skin"));  //basta sadece bunu yapmiştik sonra bunu silip alttaki iki satiri yazdik..niye??
-                                                            //24 eylül excell dersinin basinda anlatti hoca
+
         Cookie isim=driver.manage().getCookieNamed("skin");
         Assert.assertFalse(tumCookie.contains(isim));
 

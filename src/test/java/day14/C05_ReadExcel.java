@@ -25,12 +25,13 @@ public class C05_ReadExcel {
         Sheet sheet = workbook.getSheet("Sayfa1");
         Row row = sheet.getRow(0);
 
-        //-Sayfa1'ye gidip satir sayisinin 191, kullanilan satir sayisinin ise 4 oldugunu test edin
-        int lastRow = sheet.getLastRowNum(); //  workbook.getSheet("Sayfa1").getLastRowNum();
-        int lastColumn = row.getLastCellNum(); //  workbook.getSheet("Sayfa1").getRow(0).getLastCellNum();
-        System.out.println(lastColumn + " " + lastRow);
+        //-Sayfa1'ye gidip satir sayisinin 191, kullanilan satir sayisinin ise 191 oldugunu test edin
+        int lastRow = sheet.getLastRowNum(); // getLastRowNum() methodu index 0'dan basliyo
+        int activeRow = sheet.getPhysicalNumberOfRows(); // getPhysicalNumberOfRows() methodu ici dolu sati sayisini veriyo
+                                                         //bu yüzden saymaya 1'den basliyo !!!!!!!!!!!
+        System.out.println(activeRow + " " + lastRow);
         Assert.assertEquals(191, lastRow + 1);
-        Assert.assertEquals(4, lastColumn);
+        Assert.assertEquals(191, activeRow);
 
 
     }

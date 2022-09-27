@@ -15,6 +15,8 @@ public class C06_WebTables extends TestBaseBeforeClassAfterClass {
         driver.get("https://demoqa.com/webtables");
 
         //Headers da bulunan department isimlerini yazdirin
+        List<WebElement> depColumn = driver.findElements(By.xpath("//div[@class='rt-tbody']//div[@class='rt-td'][6]"));
+        depColumn.forEach(t-> System.out.println(t.getText()));
 
         //sutunun basligini yazdirin
 

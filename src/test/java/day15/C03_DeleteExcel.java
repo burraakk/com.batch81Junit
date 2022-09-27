@@ -1,16 +1,16 @@
-package day14;
+package day15;
 
 import org.apache.poi.ss.usermodel.*;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class C01_ReadExcel {
+public class C03_DeleteExcel {
     @Test
-    public void test1() throws IOException {
+    public void deleteExcelCell() throws IOException {
         //- Dosya yolunu bir String degiskene atayalim
         String dosyaYolu = "src/resources/ulkeler.xlsx";
 
@@ -31,16 +31,14 @@ public class C01_ReadExcel {
         Cell cell = row.getCell(3); //Satir secimi yapıldıktan sonra hücre seçimi bu şekilde yapılır
         System.out.println("Cell : " + cell);
 
-        //- 3. index'deki satirin 3. index'indeki datanin Cezayir oldugunu test edin
+        //-3. Satır 3. Cell'deki veriyi silelim
+        //row.removeCell(cell);
+        FileOutputStream fos = new FileOutputStream(dosyaYolu);
+        //workbook.write(fos);
+
+        //-Silindiğini test edin
         String expectedData = "Cezayir";
-        String actualData = cell.toString();
-        Assert.assertEquals(expectedData, actualData);
-
-        for (int i = 0; i <=0 ; i++) {
-            for (int j = 0; j < 4 ; j++) {
-                System.out.print(workbook.getSheet("Sayfa1").getRow(9).getCell(j).toString()+ " ");
-            }
-        }
-
+        String actualData = null;
+        Assert.assertNotEquals(expectedData, actualData);
     }
 }
